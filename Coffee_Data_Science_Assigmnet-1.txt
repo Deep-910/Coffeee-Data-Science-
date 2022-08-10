@@ -1,0 +1,255 @@
+ #Coffeee Data Science Bootcamp Assignment-1
+ 
+Basic Python
+
+Q1. Write a Python program which accepts the user's first and last name and prints them in
+reverse order with a space between them.
+program:-
+name = input("enter the first name ")
+lname = input("Enter your last name ")
+print(lname + " " + fname)
+
+2. Write a Python program which accepts a sequence of comma-separated numbers from the
+user and generates a list and a tuple with those numbers.
+Sample data : 3, 5, 7, 23
+Output :
+List : ['3', ' 5', ' 7', ' 23']
+Tuple : ('3', ' 5', ' 7', ' 23')
+program:-
+num = input("enter the some comma seprated numbers:-\n")
+lis = num.split(", ")
+
+list = list(lis)
+tuple = tuple(lis)
+print('List :', list)
+print('Tuple :' , tuple)
+
+3. Write a Python program to display the first and last colours from the following list.
+color_list = ["Red","Green","White" ,"Black"]
+program:-
+color_list= ["Red", "Green","White","Black"]
+print("The color list is:",color_list)
+print("The First and Last element of Color List are:-",color_list[0],color_list[3])
+
+4. Write a Python program to print the documents (syntax, description etc.) of Python built-in
+function(s).
+Sample function : abs()
+Expected Result : mat
+abs(number) -> number
+Return the absolute value of the argument.
+program:-
+mport builtins
+
+print(abs(-34))
+print(abs.__doc__)
+print(type(abs))
+help(builtins.abs)
+
+Q5. Write a Python program to print the calendar of a given month and year.
+Note : Use 'calendar' module.
+program:-
+from calendar import calendar, month
+
+year = int(input("Enter Year : "))
+month = int(input("Enter Month : "))
+print(calendar.month(year,month))
+
+6. Write a Python program to calculate number of days between two dates.
+Sample dates : (2014, 7, 2), (2014, 7, 11)
+Expected output : 9 days
+programe:-
+from datetime import date as date_n
+fdate = date_n(2019,7,9)
+ldate = date_n(2022,7,9)
+diff = fdate-ldate
+print(diff.days)
+
+7. Write a Python program to check whether a specified value is contained in a group of values.
+Test Data :
+3 -> [1, 5, 8, 3] : True
+-1 -> [1, 5, 8, 3] : False
+program:-
+lis = [1,3,5,8]
+value = (input("Enter a value to check the true or not"))
+if value in lis:
+    print("True")
+ else :
+    print("False")
+
+8. Write a Python program to create a histogram from a given list of integers.
+program:-
+from matplotlib import pyplot as plt
+import numpy as np
+
+#creating dataset
+num = np.array([22,44,66,78,89,1,22,34,45,56,77,8,0,43,22,13,33,54,67,65,33,11,13,17,29,35,46])
+
+#creating histogram
+fig, ax = plt.subplots(figsize =(13,9))
+ax.hist(num, bins = [12,4,76,28,11])
+
+#show plot
+plt.show()
+
+Q10. Write a Python program to print out a set containing all the colors from color_list_1 which are
+not present in color_list_2.
+Test Data :
+color_list_1 = set(["White", "Black", "Red"])
+color_list_2 = set(["Red", "Green"])
+Expected Output :
+{'Black', 'White'}
+program:-
+clist_1 = set(["WHITE","BLACK","RED"])
+clist_2 = set(["RED","GREEN"])
+print("Origianl set of colors:","\n",clist_1,"\n", clist_2)
+
+print("Color which are not present in list 2")
+print(clist_1.difference(clist_2))
+
+12. Write a python program to call an external command in Python.
+program:-
+import os
+commond = input("Enter External Command")
+print(os.system(commond))
+
+13. Write a Python program to find out the number of CPUs using.
+Program:-
+import multiprocessing 
+print("Cpu Count is:",multiprocessing.cpu_count())
+
+14. Write a Python program to list all files in a directory in Python.
+program:-
+import os
+ path = "C:\Program Files"
+ dir_list = os.listdir(path)
+ print("Files and directories in ", path,':')
+ print(dir_list)
+
+15. Write a python program to access environment variables.
+program:-
+from ctypes.wintypes import PLARGE_INTEGER
+import os
+print("*-----------------------------------------------------------------*")
+print(os.environ)
+
+16. Write a Python program to get the current username
+program:-
+import os
+os.environ.get("USERNAME")
+
+23. Write a Python program to find the available built-in modules.
+Program:-
+from ntpath import join
+import sys
+import textwrap
+module_name = ', '.join(sorted(sys.builtin_module_names))
+print(textwrap.fill(module_name, width=70))
+
+27. Write a Python program to get the system time.
+program:-
+import datetime 
+print(datetime.datetime.now())
+
+28. Write a Python program to clear the screen or terminal.
+program:-
+
+29. Write a Python program to get the name of the host on which the routine is running.
+Program:-
+import socket
+host_name = socket.gethostname()
+print()
+print("HOST NAME:-", host_name)
+print()
+
+30. Write a Python program to access and print a URL's content to the console.
+program:-
+import requests
+data = requests.get('https://stackoverflow.com')
+print(data.text)
+
+Array
+
+1.write python program to create an array of 5 integers and display the array items.
+Access individual element through indexes.
+Program:-
+from array import*
+array_num = array('i', [33,44,5,6,7])
+for i in array_num:
+    print(i)
+print("Access first first itens individually")
+print(array_num[0])
+print(array_num[1])
+print(array_num[2])
+print(array_num[3])
+print(array_num[4])
+
+2. Write a Python program to reverse the order of the items in the array.
+program:-
+arr = [12,33,5,6,77,0]
+print("After reversal Array is :", arr)
+arr.reverse()
+print("Before reversal Array is :", arr)
+
+Sets
+
+1. Write a Python program to create a set.
+program:-
+set ={1,4,6,8}
+print(set)
+print(type(set))
+
+2. Write a Python program to iteration over sets.
+program:-
+num = set([0,32,4,5,6,7,44,5])
+for n in num:
+    print(n, end=' ')
+print("\n \n New Set")
+char = set("MYWORLD")
+#Iteration using for loop
+for val in char:
+    print(val, end=' ')
+	
+3. Write a Python program to add member(s) in a set.
+               
+4. Write a Python program to remove item(s) from set
+Program:-
+#Q3 & Q4
+name = {2,3,4,5,6,7,7}
+name.add(0)
+print(name)
+name.remove(2)
+print(name)
+
+8. Write a Python program to create set difference.
+program:-
+set1 = set(["Alfa", "Beta", "gamma","delta"])
+set2 = set(["Alfa" ,"delta"])
+print("Orginal set:\n",set1,set2)
+
+#diff of set1 & set2
+diff1 = set.difference(set1)
+print("Difference of set1 is:")
+print(diff1)
+
+diff2 = set.difference(set2)
+print("Difference of set2 is:")
+print(diff2)
+
+List
+
+1. Write a Python program to sum all the items in a list.
+program:-
+#Q1
+list = [22,3,4,5,66,467,0]
+total = sum(list)
+print("Sum of all elemets in a given list",total)
+
+2. Write a Python program to multiplies all the items in a list.
+3. Write a Python program to get the smallest number from a list.
+Program:-
+list =[34,55,0,34,-4,6]
+#list.sort()
+
+print("Smallest element is:-",min(list))
+
+
